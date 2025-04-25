@@ -14,12 +14,3 @@ export async function runTransaction<T>(
     }
   }, options);
 }
-
-// Example usage:
-/*
-const result = await runTransaction(async (tx) => {
-  const user = await tx.user.create({ data: { ... } })
-  await tx.account.create({ data: { userId: user.id, ... } })
-  return user
-})
-*/

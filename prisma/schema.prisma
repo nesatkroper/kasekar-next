@@ -38,6 +38,7 @@ enum PaymentMethod {
 }
 enum Status { 
   active 
+  pending
   inactive 
 }
 model Address {
