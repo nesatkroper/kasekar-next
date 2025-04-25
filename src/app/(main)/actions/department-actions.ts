@@ -59,7 +59,6 @@ export async function createDepartment(data: DepartmentFormData) {
     const department = await prisma.department.create({
       data: {
         departmentName: validatedData.departmentName,
-        departmentCode: validatedData.departmentCode,
         memo: validatedData.memo,
         status: validatedData.status as Status,
       },
@@ -101,7 +100,6 @@ export async function updateDepartment(
       where: { departmentId },
       data: {
         departmentName: validatedData.departmentName,
-        departmentCode: validatedData.departmentCode,
         memo: validatedData.memo,
         status: validatedData.status as Status,
       },

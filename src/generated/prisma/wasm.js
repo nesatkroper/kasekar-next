@@ -186,7 +186,6 @@ exports.Prisma.CategoryScalarFieldEnum = {
   categoryId: 'categoryId',
   picture: 'picture',
   categoryName: 'categoryName',
-  categoryCode: 'categoryCode',
   memo: 'memo',
   status: 'status',
   createdAt: 'createdAt',
@@ -225,7 +224,6 @@ exports.Prisma.CustomerinfoScalarFieldEnum = {
 exports.Prisma.DepartmentScalarFieldEnum = {
   departmentId: 'departmentId',
   departmentName: 'departmentName',
-  departmentCode: 'departmentCode',
   memo: 'memo',
   status: 'status',
   createdAt: 'createdAt',
@@ -234,7 +232,6 @@ exports.Prisma.DepartmentScalarFieldEnum = {
 
 exports.Prisma.EmployeeScalarFieldEnum = {
   employeeId: 'employeeId',
-  employeeCode: 'employeeCode',
   firstName: 'firstName',
   lastName: 'lastName',
   gender: 'gender',
@@ -313,7 +310,6 @@ exports.Prisma.PositionScalarFieldEnum = {
   positionId: 'positionId',
   departmentId: 'departmentId',
   positionName: 'positionName',
-  positionCode: 'positionCode',
   memo: 'memo',
   status: 'status',
   createdAt: 'createdAt',
@@ -323,7 +319,6 @@ exports.Prisma.PositionScalarFieldEnum = {
 exports.Prisma.ProductScalarFieldEnum = {
   productId: 'productId',
   productName: 'productName',
-  productCode: 'productCode',
   categoryId: 'categoryId',
   picture: 'picture',
   price: 'price',
@@ -450,6 +445,7 @@ exports.Prisma.NullsOrder = {
 };
 exports.Status = exports.$Enums.Status = {
   active: 'active',
+  pending: 'pending',
   inactive: 'inactive'
 };
 

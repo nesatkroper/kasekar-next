@@ -30,7 +30,11 @@ import {
 } from "@/components/base/data-table";
 import { Department, Status } from "@/generated/prisma";
 
-export default function DepartmentTable(departmentData: Department) {
+export default function DepartmentTable({
+  departmentData = [],
+}: {
+  departmentData: Department[];
+}) {
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [currentDepartment, setCurrentDepartment] = useState<Department | null>(
@@ -249,9 +253,9 @@ export default function DepartmentTable(departmentData: Department) {
           <DialogHeader>
             <DialogTitle>Confirm Deletion</DialogTitle>
             <DialogDescription>
-              Are you sure you want to delete the department "
-              {currentDepartment?.departmentName}"? This action cannot be
-              undone.
+              {`        Are you sure you want to delete the department "
+              ${currentDepartment?.departmentName}"? This action cannot be
+              undone.`}
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

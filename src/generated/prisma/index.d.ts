@@ -202,6 +202,7 @@ export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
 
 export const Status: {
   active: 'active',
+  pending: 'pending',
   inactive: 'inactive'
 };
 
@@ -11070,7 +11071,6 @@ export namespace Prisma {
     categoryId: string | null
     picture: string | null
     categoryName: string | null
-    categoryCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -11081,7 +11081,6 @@ export namespace Prisma {
     categoryId: string | null
     picture: string | null
     categoryName: string | null
-    categoryCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -11092,7 +11091,6 @@ export namespace Prisma {
     categoryId: number
     picture: number
     categoryName: number
-    categoryCode: number
     memo: number
     status: number
     createdAt: number
@@ -11105,7 +11103,6 @@ export namespace Prisma {
     categoryId?: true
     picture?: true
     categoryName?: true
-    categoryCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -11116,7 +11113,6 @@ export namespace Prisma {
     categoryId?: true
     picture?: true
     categoryName?: true
-    categoryCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -11127,7 +11123,6 @@ export namespace Prisma {
     categoryId?: true
     picture?: true
     categoryName?: true
-    categoryCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -11211,7 +11206,6 @@ export namespace Prisma {
     categoryId: string
     picture: string | null
     categoryName: string
-    categoryCode: string | null
     memo: string | null
     status: $Enums.Status
     createdAt: Date
@@ -11239,7 +11233,6 @@ export namespace Prisma {
     categoryId?: boolean
     picture?: boolean
     categoryName?: boolean
-    categoryCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -11252,7 +11245,6 @@ export namespace Prisma {
     categoryId?: boolean
     picture?: boolean
     categoryName?: boolean
-    categoryCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -11263,7 +11255,6 @@ export namespace Prisma {
     categoryId?: boolean
     picture?: boolean
     categoryName?: boolean
-    categoryCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -11274,14 +11265,13 @@ export namespace Prisma {
     categoryId?: boolean
     picture?: boolean
     categoryName?: boolean
-    categoryCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"categoryId" | "picture" | "categoryName" | "categoryCode" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["category"]>
+  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"categoryId" | "picture" | "categoryName" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     products?: boolean | Category$productsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -11298,7 +11288,6 @@ export namespace Prisma {
       categoryId: string
       picture: string | null
       categoryName: string
-      categoryCode: string | null
       memo: string | null
       status: $Enums.Status
       createdAt: Date
@@ -11730,7 +11719,6 @@ export namespace Prisma {
     readonly categoryId: FieldRef<"Category", 'String'>
     readonly picture: FieldRef<"Category", 'String'>
     readonly categoryName: FieldRef<"Category", 'String'>
-    readonly categoryCode: FieldRef<"Category", 'String'>
     readonly memo: FieldRef<"Category", 'String'>
     readonly status: FieldRef<"Category", 'Status'>
     readonly createdAt: FieldRef<"Category", 'DateTime'>
@@ -15510,7 +15498,6 @@ export namespace Prisma {
   export type DepartmentMinAggregateOutputType = {
     departmentId: string | null
     departmentName: string | null
-    departmentCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -15520,7 +15507,6 @@ export namespace Prisma {
   export type DepartmentMaxAggregateOutputType = {
     departmentId: string | null
     departmentName: string | null
-    departmentCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -15530,7 +15516,6 @@ export namespace Prisma {
   export type DepartmentCountAggregateOutputType = {
     departmentId: number
     departmentName: number
-    departmentCode: number
     memo: number
     status: number
     createdAt: number
@@ -15542,7 +15527,6 @@ export namespace Prisma {
   export type DepartmentMinAggregateInputType = {
     departmentId?: true
     departmentName?: true
-    departmentCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -15552,7 +15536,6 @@ export namespace Prisma {
   export type DepartmentMaxAggregateInputType = {
     departmentId?: true
     departmentName?: true
-    departmentCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -15562,7 +15545,6 @@ export namespace Prisma {
   export type DepartmentCountAggregateInputType = {
     departmentId?: true
     departmentName?: true
-    departmentCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -15645,7 +15627,6 @@ export namespace Prisma {
   export type DepartmentGroupByOutputType = {
     departmentId: string
     departmentName: string
-    departmentCode: string | null
     memo: string | null
     status: $Enums.Status
     createdAt: Date
@@ -15672,7 +15653,6 @@ export namespace Prisma {
   export type DepartmentSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     departmentId?: boolean
     departmentName?: boolean
-    departmentCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -15685,7 +15665,6 @@ export namespace Prisma {
   export type DepartmentSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     departmentId?: boolean
     departmentName?: boolean
-    departmentCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -15695,7 +15674,6 @@ export namespace Prisma {
   export type DepartmentSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     departmentId?: boolean
     departmentName?: boolean
-    departmentCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -15705,14 +15683,13 @@ export namespace Prisma {
   export type DepartmentSelectScalar = {
     departmentId?: boolean
     departmentName?: boolean
-    departmentCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type DepartmentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"departmentId" | "departmentName" | "departmentCode" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["department"]>
+  export type DepartmentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"departmentId" | "departmentName" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["department"]>
   export type DepartmentInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     positions?: boolean | Department$positionsArgs<ExtArgs>
     employees?: boolean | Department$employeesArgs<ExtArgs>
@@ -15730,7 +15707,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       departmentId: string
       departmentName: string
-      departmentCode: string | null
       memo: string | null
       status: $Enums.Status
       createdAt: Date
@@ -16162,7 +16138,6 @@ export namespace Prisma {
   interface DepartmentFieldRefs {
     readonly departmentId: FieldRef<"Department", 'String'>
     readonly departmentName: FieldRef<"Department", 'String'>
-    readonly departmentCode: FieldRef<"Department", 'String'>
     readonly memo: FieldRef<"Department", 'String'>
     readonly status: FieldRef<"Department", 'Status'>
     readonly createdAt: FieldRef<"Department", 'DateTime'>
@@ -16643,7 +16618,6 @@ export namespace Prisma {
 
   export type EmployeeMinAggregateOutputType = {
     employeeId: string | null
-    employeeCode: string | null
     firstName: string | null
     lastName: string | null
     gender: $Enums.Gender | null
@@ -16660,7 +16634,6 @@ export namespace Prisma {
 
   export type EmployeeMaxAggregateOutputType = {
     employeeId: string | null
-    employeeCode: string | null
     firstName: string | null
     lastName: string | null
     gender: $Enums.Gender | null
@@ -16677,7 +16650,6 @@ export namespace Prisma {
 
   export type EmployeeCountAggregateOutputType = {
     employeeId: number
-    employeeCode: number
     firstName: number
     lastName: number
     gender: number
@@ -16704,7 +16676,6 @@ export namespace Prisma {
 
   export type EmployeeMinAggregateInputType = {
     employeeId?: true
-    employeeCode?: true
     firstName?: true
     lastName?: true
     gender?: true
@@ -16721,7 +16692,6 @@ export namespace Prisma {
 
   export type EmployeeMaxAggregateInputType = {
     employeeId?: true
-    employeeCode?: true
     firstName?: true
     lastName?: true
     gender?: true
@@ -16738,7 +16708,6 @@ export namespace Prisma {
 
   export type EmployeeCountAggregateInputType = {
     employeeId?: true
-    employeeCode?: true
     firstName?: true
     lastName?: true
     gender?: true
@@ -16842,7 +16811,6 @@ export namespace Prisma {
 
   export type EmployeeGroupByOutputType = {
     employeeId: string
-    employeeCode: string | null
     firstName: string
     lastName: string
     gender: $Enums.Gender
@@ -16878,7 +16846,6 @@ export namespace Prisma {
 
   export type EmployeeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     employeeId?: boolean
-    employeeCode?: boolean
     firstName?: boolean
     lastName?: boolean
     gender?: boolean
@@ -16904,7 +16871,6 @@ export namespace Prisma {
 
   export type EmployeeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     employeeId?: boolean
-    employeeCode?: boolean
     firstName?: boolean
     lastName?: boolean
     gender?: boolean
@@ -16923,7 +16889,6 @@ export namespace Prisma {
 
   export type EmployeeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     employeeId?: boolean
-    employeeCode?: boolean
     firstName?: boolean
     lastName?: boolean
     gender?: boolean
@@ -16942,7 +16907,6 @@ export namespace Prisma {
 
   export type EmployeeSelectScalar = {
     employeeId?: boolean
-    employeeCode?: boolean
     firstName?: boolean
     lastName?: boolean
     gender?: boolean
@@ -16957,7 +16921,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"employeeId" | "employeeCode" | "firstName" | "lastName" | "gender" | "dob" | "phone" | "positionId" | "departmentId" | "salary" | "hiredDate" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["employee"]>
+  export type EmployeeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"employeeId" | "firstName" | "lastName" | "gender" | "dob" | "phone" | "positionId" | "departmentId" | "salary" | "hiredDate" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["employee"]>
   export type EmployeeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     auth?: boolean | Employee$authArgs<ExtArgs>
     info?: boolean | Employee$infoArgs<ExtArgs>
@@ -16992,7 +16956,6 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       employeeId: string
-      employeeCode: string | null
       firstName: string
       lastName: string
       gender: $Enums.Gender
@@ -17437,7 +17400,6 @@ export namespace Prisma {
    */
   interface EmployeeFieldRefs {
     readonly employeeId: FieldRef<"Employee", 'String'>
-    readonly employeeCode: FieldRef<"Employee", 'String'>
     readonly firstName: FieldRef<"Employee", 'String'>
     readonly lastName: FieldRef<"Employee", 'String'>
     readonly gender: FieldRef<"Employee", 'Gender'>
@@ -23655,7 +23617,6 @@ export namespace Prisma {
     positionId: string | null
     departmentId: string | null
     positionName: string | null
-    positionCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -23666,7 +23627,6 @@ export namespace Prisma {
     positionId: string | null
     departmentId: string | null
     positionName: string | null
-    positionCode: string | null
     memo: string | null
     status: $Enums.Status | null
     createdAt: Date | null
@@ -23677,7 +23637,6 @@ export namespace Prisma {
     positionId: number
     departmentId: number
     positionName: number
-    positionCode: number
     memo: number
     status: number
     createdAt: number
@@ -23690,7 +23649,6 @@ export namespace Prisma {
     positionId?: true
     departmentId?: true
     positionName?: true
-    positionCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -23701,7 +23659,6 @@ export namespace Prisma {
     positionId?: true
     departmentId?: true
     positionName?: true
-    positionCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -23712,7 +23669,6 @@ export namespace Prisma {
     positionId?: true
     departmentId?: true
     positionName?: true
-    positionCode?: true
     memo?: true
     status?: true
     createdAt?: true
@@ -23796,7 +23752,6 @@ export namespace Prisma {
     positionId: string
     departmentId: string
     positionName: string | null
-    positionCode: string | null
     memo: string | null
     status: $Enums.Status
     createdAt: Date
@@ -23824,7 +23779,6 @@ export namespace Prisma {
     positionId?: boolean
     departmentId?: boolean
     positionName?: boolean
-    positionCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -23838,7 +23792,6 @@ export namespace Prisma {
     positionId?: boolean
     departmentId?: boolean
     positionName?: boolean
-    positionCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -23850,7 +23803,6 @@ export namespace Prisma {
     positionId?: boolean
     departmentId?: boolean
     positionName?: boolean
-    positionCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
@@ -23862,14 +23814,13 @@ export namespace Prisma {
     positionId?: boolean
     departmentId?: boolean
     positionName?: boolean
-    positionCode?: boolean
     memo?: boolean
     status?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type PositionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"positionId" | "departmentId" | "positionName" | "positionCode" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["position"]>
+  export type PositionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"positionId" | "departmentId" | "positionName" | "memo" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["position"]>
   export type PositionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     department?: boolean | DepartmentDefaultArgs<ExtArgs>
     employees?: boolean | Position$employeesArgs<ExtArgs>
@@ -23892,7 +23843,6 @@ export namespace Prisma {
       positionId: string
       departmentId: string
       positionName: string | null
-      positionCode: string | null
       memo: string | null
       status: $Enums.Status
       createdAt: Date
@@ -24325,7 +24275,6 @@ export namespace Prisma {
     readonly positionId: FieldRef<"Position", 'String'>
     readonly departmentId: FieldRef<"Position", 'String'>
     readonly positionName: FieldRef<"Position", 'String'>
-    readonly positionCode: FieldRef<"Position", 'String'>
     readonly memo: FieldRef<"Position", 'String'>
     readonly status: FieldRef<"Position", 'Status'>
     readonly createdAt: FieldRef<"Position", 'DateTime'>
@@ -24793,7 +24742,6 @@ export namespace Prisma {
   export type ProductMinAggregateOutputType = {
     productId: string | null
     productName: string | null
-    productCode: string | null
     categoryId: string | null
     picture: string | null
     price: Decimal | null
@@ -24806,7 +24754,6 @@ export namespace Prisma {
   export type ProductMaxAggregateOutputType = {
     productId: string | null
     productName: string | null
-    productCode: string | null
     categoryId: string | null
     picture: string | null
     price: Decimal | null
@@ -24819,7 +24766,6 @@ export namespace Prisma {
   export type ProductCountAggregateOutputType = {
     productId: number
     productName: number
-    productCode: number
     categoryId: number
     picture: number
     price: number
@@ -24844,7 +24790,6 @@ export namespace Prisma {
   export type ProductMinAggregateInputType = {
     productId?: true
     productName?: true
-    productCode?: true
     categoryId?: true
     picture?: true
     price?: true
@@ -24857,7 +24802,6 @@ export namespace Prisma {
   export type ProductMaxAggregateInputType = {
     productId?: true
     productName?: true
-    productCode?: true
     categoryId?: true
     picture?: true
     price?: true
@@ -24870,7 +24814,6 @@ export namespace Prisma {
   export type ProductCountAggregateInputType = {
     productId?: true
     productName?: true
-    productCode?: true
     categoryId?: true
     picture?: true
     price?: true
@@ -24970,7 +24913,6 @@ export namespace Prisma {
   export type ProductGroupByOutputType = {
     productId: string
     productName: string
-    productCode: string | null
     categoryId: string
     picture: string | null
     price: Decimal
@@ -25002,7 +24944,6 @@ export namespace Prisma {
   export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     productId?: boolean
     productName?: boolean
-    productCode?: boolean
     categoryId?: boolean
     picture?: boolean
     price?: boolean
@@ -25020,7 +24961,6 @@ export namespace Prisma {
   export type ProductSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     productId?: boolean
     productName?: boolean
-    productCode?: boolean
     categoryId?: boolean
     picture?: boolean
     price?: boolean
@@ -25034,7 +24974,6 @@ export namespace Prisma {
   export type ProductSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     productId?: boolean
     productName?: boolean
-    productCode?: boolean
     categoryId?: boolean
     picture?: boolean
     price?: boolean
@@ -25048,7 +24987,6 @@ export namespace Prisma {
   export type ProductSelectScalar = {
     productId?: boolean
     productName?: boolean
-    productCode?: boolean
     categoryId?: boolean
     picture?: boolean
     price?: boolean
@@ -25058,7 +24996,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"productId" | "productName" | "productCode" | "categoryId" | "picture" | "price" | "discountRate" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"productId" | "productName" | "categoryId" | "picture" | "price" | "discountRate" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | Product$categoryArgs<ExtArgs>
     stocks?: boolean | Product$stocksArgs<ExtArgs>
@@ -25084,7 +25022,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       productId: string
       productName: string
-      productCode: string | null
       categoryId: string
       picture: string | null
       price: Prisma.Decimal
@@ -25521,7 +25458,6 @@ export namespace Prisma {
   interface ProductFieldRefs {
     readonly productId: FieldRef<"Product", 'String'>
     readonly productName: FieldRef<"Product", 'String'>
-    readonly productCode: FieldRef<"Product", 'String'>
     readonly categoryId: FieldRef<"Product", 'String'>
     readonly picture: FieldRef<"Product", 'String'>
     readonly price: FieldRef<"Product", 'Decimal'>
@@ -37394,7 +37330,6 @@ export namespace Prisma {
     categoryId: 'categoryId',
     picture: 'picture',
     categoryName: 'categoryName',
-    categoryCode: 'categoryCode',
     memo: 'memo',
     status: 'status',
     createdAt: 'createdAt',
@@ -37445,7 +37380,6 @@ export namespace Prisma {
   export const DepartmentScalarFieldEnum: {
     departmentId: 'departmentId',
     departmentName: 'departmentName',
-    departmentCode: 'departmentCode',
     memo: 'memo',
     status: 'status',
     createdAt: 'createdAt',
@@ -37457,7 +37391,6 @@ export namespace Prisma {
 
   export const EmployeeScalarFieldEnum: {
     employeeId: 'employeeId',
-    employeeCode: 'employeeCode',
     firstName: 'firstName',
     lastName: 'lastName',
     gender: 'gender',
@@ -37554,7 +37487,6 @@ export namespace Prisma {
     positionId: 'positionId',
     departmentId: 'departmentId',
     positionName: 'positionName',
-    positionCode: 'positionCode',
     memo: 'memo',
     status: 'status',
     createdAt: 'createdAt',
@@ -37567,7 +37499,6 @@ export namespace Prisma {
   export const ProductScalarFieldEnum: {
     productId: 'productId',
     productName: 'productName',
-    productCode: 'productCode',
     categoryId: 'categoryId',
     picture: 'picture',
     price: 'price',
@@ -38316,7 +38247,6 @@ export namespace Prisma {
     categoryId?: UuidFilter<"Category"> | string
     picture?: StringNullableFilter<"Category"> | string | null
     categoryName?: StringFilter<"Category"> | string
-    categoryCode?: StringNullableFilter<"Category"> | string | null
     memo?: StringNullableFilter<"Category"> | string | null
     status?: EnumStatusFilter<"Category"> | $Enums.Status
     createdAt?: DateTimeFilter<"Category"> | Date | string
@@ -38328,7 +38258,6 @@ export namespace Prisma {
     categoryId?: SortOrder
     picture?: SortOrderInput | SortOrder
     categoryName?: SortOrder
-    categoryCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -38343,7 +38272,6 @@ export namespace Prisma {
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     picture?: StringNullableFilter<"Category"> | string | null
     categoryName?: StringFilter<"Category"> | string
-    categoryCode?: StringNullableFilter<"Category"> | string | null
     memo?: StringNullableFilter<"Category"> | string | null
     status?: EnumStatusFilter<"Category"> | $Enums.Status
     createdAt?: DateTimeFilter<"Category"> | Date | string
@@ -38355,7 +38283,6 @@ export namespace Prisma {
     categoryId?: SortOrder
     picture?: SortOrderInput | SortOrder
     categoryName?: SortOrder
-    categoryCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -38372,7 +38299,6 @@ export namespace Prisma {
     categoryId?: UuidWithAggregatesFilter<"Category"> | string
     picture?: StringNullableWithAggregatesFilter<"Category"> | string | null
     categoryName?: StringWithAggregatesFilter<"Category"> | string
-    categoryCode?: StringNullableWithAggregatesFilter<"Category"> | string | null
     memo?: StringNullableWithAggregatesFilter<"Category"> | string | null
     status?: EnumStatusWithAggregatesFilter<"Category"> | $Enums.Status
     createdAt?: DateTimeWithAggregatesFilter<"Category"> | Date | string
@@ -38585,7 +38511,6 @@ export namespace Prisma {
     NOT?: DepartmentWhereInput | DepartmentWhereInput[]
     departmentId?: UuidFilter<"Department"> | string
     departmentName?: StringFilter<"Department"> | string
-    departmentCode?: StringNullableFilter<"Department"> | string | null
     memo?: StringNullableFilter<"Department"> | string | null
     status?: EnumStatusFilter<"Department"> | $Enums.Status
     createdAt?: DateTimeFilter<"Department"> | Date | string
@@ -38597,7 +38522,6 @@ export namespace Prisma {
   export type DepartmentOrderByWithRelationInput = {
     departmentId?: SortOrder
     departmentName?: SortOrder
-    departmentCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -38612,7 +38536,6 @@ export namespace Prisma {
     OR?: DepartmentWhereInput[]
     NOT?: DepartmentWhereInput | DepartmentWhereInput[]
     departmentName?: StringFilter<"Department"> | string
-    departmentCode?: StringNullableFilter<"Department"> | string | null
     memo?: StringNullableFilter<"Department"> | string | null
     status?: EnumStatusFilter<"Department"> | $Enums.Status
     createdAt?: DateTimeFilter<"Department"> | Date | string
@@ -38624,7 +38547,6 @@ export namespace Prisma {
   export type DepartmentOrderByWithAggregationInput = {
     departmentId?: SortOrder
     departmentName?: SortOrder
-    departmentCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -38640,7 +38562,6 @@ export namespace Prisma {
     NOT?: DepartmentScalarWhereWithAggregatesInput | DepartmentScalarWhereWithAggregatesInput[]
     departmentId?: UuidWithAggregatesFilter<"Department"> | string
     departmentName?: StringWithAggregatesFilter<"Department"> | string
-    departmentCode?: StringNullableWithAggregatesFilter<"Department"> | string | null
     memo?: StringNullableWithAggregatesFilter<"Department"> | string | null
     status?: EnumStatusWithAggregatesFilter<"Department"> | $Enums.Status
     createdAt?: DateTimeWithAggregatesFilter<"Department"> | Date | string
@@ -38652,7 +38573,6 @@ export namespace Prisma {
     OR?: EmployeeWhereInput[]
     NOT?: EmployeeWhereInput | EmployeeWhereInput[]
     employeeId?: UuidFilter<"Employee"> | string
-    employeeCode?: StringNullableFilter<"Employee"> | string | null
     firstName?: StringFilter<"Employee"> | string
     lastName?: StringFilter<"Employee"> | string
     gender?: EnumGenderFilter<"Employee"> | $Enums.Gender
@@ -38677,7 +38597,6 @@ export namespace Prisma {
 
   export type EmployeeOrderByWithRelationInput = {
     employeeId?: SortOrder
-    employeeCode?: SortOrderInput | SortOrder
     firstName?: SortOrder
     lastName?: SortOrder
     gender?: SortOrder
@@ -38702,7 +38621,6 @@ export namespace Prisma {
 
   export type EmployeeWhereUniqueInput = Prisma.AtLeast<{
     employeeId?: string
-    employeeCode?: string
     phone?: string
     AND?: EmployeeWhereInput | EmployeeWhereInput[]
     OR?: EmployeeWhereInput[]
@@ -38726,11 +38644,10 @@ export namespace Prisma {
     payment?: PaymentListRelationFilter
     position?: XOR<PositionNullableScalarRelationFilter, PositionWhereInput> | null
     department?: XOR<DepartmentNullableScalarRelationFilter, DepartmentWhereInput> | null
-  }, "employeeId" | "employeeCode" | "phone">
+  }, "employeeId" | "phone">
 
   export type EmployeeOrderByWithAggregationInput = {
     employeeId?: SortOrder
-    employeeCode?: SortOrderInput | SortOrder
     firstName?: SortOrder
     lastName?: SortOrder
     gender?: SortOrder
@@ -38755,7 +38672,6 @@ export namespace Prisma {
     OR?: EmployeeScalarWhereWithAggregatesInput[]
     NOT?: EmployeeScalarWhereWithAggregatesInput | EmployeeScalarWhereWithAggregatesInput[]
     employeeId?: UuidWithAggregatesFilter<"Employee"> | string
-    employeeCode?: StringNullableWithAggregatesFilter<"Employee"> | string | null
     firstName?: StringWithAggregatesFilter<"Employee"> | string
     lastName?: StringWithAggregatesFilter<"Employee"> | string
     gender?: EnumGenderWithAggregatesFilter<"Employee"> | $Enums.Gender
@@ -39156,7 +39072,6 @@ export namespace Prisma {
     positionId?: UuidFilter<"Position"> | string
     departmentId?: UuidFilter<"Position"> | string
     positionName?: StringNullableFilter<"Position"> | string | null
-    positionCode?: StringNullableFilter<"Position"> | string | null
     memo?: StringNullableFilter<"Position"> | string | null
     status?: EnumStatusFilter<"Position"> | $Enums.Status
     createdAt?: DateTimeFilter<"Position"> | Date | string
@@ -39169,7 +39084,6 @@ export namespace Prisma {
     positionId?: SortOrder
     departmentId?: SortOrder
     positionName?: SortOrderInput | SortOrder
-    positionCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -39185,7 +39099,6 @@ export namespace Prisma {
     NOT?: PositionWhereInput | PositionWhereInput[]
     departmentId?: UuidFilter<"Position"> | string
     positionName?: StringNullableFilter<"Position"> | string | null
-    positionCode?: StringNullableFilter<"Position"> | string | null
     memo?: StringNullableFilter<"Position"> | string | null
     status?: EnumStatusFilter<"Position"> | $Enums.Status
     createdAt?: DateTimeFilter<"Position"> | Date | string
@@ -39198,7 +39111,6 @@ export namespace Prisma {
     positionId?: SortOrder
     departmentId?: SortOrder
     positionName?: SortOrderInput | SortOrder
-    positionCode?: SortOrderInput | SortOrder
     memo?: SortOrderInput | SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -39215,7 +39127,6 @@ export namespace Prisma {
     positionId?: UuidWithAggregatesFilter<"Position"> | string
     departmentId?: UuidWithAggregatesFilter<"Position"> | string
     positionName?: StringNullableWithAggregatesFilter<"Position"> | string | null
-    positionCode?: StringNullableWithAggregatesFilter<"Position"> | string | null
     memo?: StringNullableWithAggregatesFilter<"Position"> | string | null
     status?: EnumStatusWithAggregatesFilter<"Position"> | $Enums.Status
     createdAt?: DateTimeWithAggregatesFilter<"Position"> | Date | string
@@ -39228,7 +39139,6 @@ export namespace Prisma {
     NOT?: ProductWhereInput | ProductWhereInput[]
     productId?: UuidFilter<"Product"> | string
     productName?: StringFilter<"Product"> | string
-    productCode?: StringNullableFilter<"Product"> | string | null
     categoryId?: UuidFilter<"Product"> | string
     picture?: StringNullableFilter<"Product"> | string | null
     price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
@@ -39245,7 +39155,6 @@ export namespace Prisma {
   export type ProductOrderByWithRelationInput = {
     productId?: SortOrder
     productName?: SortOrder
-    productCode?: SortOrderInput | SortOrder
     categoryId?: SortOrder
     picture?: SortOrderInput | SortOrder
     price?: SortOrder
@@ -39265,7 +39174,6 @@ export namespace Prisma {
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
     productName?: StringFilter<"Product"> | string
-    productCode?: StringNullableFilter<"Product"> | string | null
     categoryId?: UuidFilter<"Product"> | string
     picture?: StringNullableFilter<"Product"> | string | null
     price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
@@ -39282,7 +39190,6 @@ export namespace Prisma {
   export type ProductOrderByWithAggregationInput = {
     productId?: SortOrder
     productName?: SortOrder
-    productCode?: SortOrderInput | SortOrder
     categoryId?: SortOrder
     picture?: SortOrderInput | SortOrder
     price?: SortOrder
@@ -39303,7 +39210,6 @@ export namespace Prisma {
     NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
     productId?: UuidWithAggregatesFilter<"Product"> | string
     productName?: StringWithAggregatesFilter<"Product"> | string
-    productCode?: StringNullableWithAggregatesFilter<"Product"> | string | null
     categoryId?: UuidWithAggregatesFilter<"Product"> | string
     picture?: StringNullableWithAggregatesFilter<"Product"> | string | null
     price?: DecimalWithAggregatesFilter<"Product"> | Decimal | DecimalJsLike | number | string
@@ -40470,7 +40376,6 @@ export namespace Prisma {
     categoryId?: string
     picture?: string | null
     categoryName: string
-    categoryCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40482,7 +40387,6 @@ export namespace Prisma {
     categoryId?: string
     picture?: string | null
     categoryName: string
-    categoryCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40494,7 +40398,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40506,7 +40409,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40518,7 +40420,6 @@ export namespace Prisma {
     categoryId?: string
     picture?: string | null
     categoryName: string
-    categoryCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40529,7 +40430,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40540,7 +40440,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40767,7 +40666,6 @@ export namespace Prisma {
   export type DepartmentCreateInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40779,7 +40677,6 @@ export namespace Prisma {
   export type DepartmentUncheckedCreateInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40791,7 +40688,6 @@ export namespace Prisma {
   export type DepartmentUpdateInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40803,7 +40699,6 @@ export namespace Prisma {
   export type DepartmentUncheckedUpdateInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40815,7 +40710,6 @@ export namespace Prisma {
   export type DepartmentCreateManyInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -40825,7 +40719,6 @@ export namespace Prisma {
   export type DepartmentUpdateManyMutationInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40835,7 +40728,6 @@ export namespace Prisma {
   export type DepartmentUncheckedUpdateManyInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40844,7 +40736,6 @@ export namespace Prisma {
 
   export type EmployeeCreateInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -40867,7 +40758,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -40890,7 +40780,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -40913,7 +40802,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -40936,7 +40824,6 @@ export namespace Prisma {
 
   export type EmployeeCreateManyInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -40953,7 +40840,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateManyMutationInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -40968,7 +40854,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateManyInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -41401,7 +41286,6 @@ export namespace Prisma {
   export type PositionCreateInput = {
     positionId?: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -41414,7 +41298,6 @@ export namespace Prisma {
     positionId?: string
     departmentId: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -41425,7 +41308,6 @@ export namespace Prisma {
   export type PositionUpdateInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41438,7 +41320,6 @@ export namespace Prisma {
     positionId?: StringFieldUpdateOperationsInput | string
     departmentId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41450,7 +41331,6 @@ export namespace Prisma {
     positionId?: string
     departmentId: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -41460,7 +41340,6 @@ export namespace Prisma {
   export type PositionUpdateManyMutationInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41471,7 +41350,6 @@ export namespace Prisma {
     positionId?: StringFieldUpdateOperationsInput | string
     departmentId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41481,7 +41359,6 @@ export namespace Prisma {
   export type ProductCreateInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -41497,7 +41374,6 @@ export namespace Prisma {
   export type ProductUncheckedCreateInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     categoryId: string
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
@@ -41513,7 +41389,6 @@ export namespace Prisma {
   export type ProductUpdateInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -41529,7 +41404,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -41545,7 +41419,6 @@ export namespace Prisma {
   export type ProductCreateManyInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     categoryId: string
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
@@ -41558,7 +41431,6 @@ export namespace Prisma {
   export type ProductUpdateManyMutationInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -41570,7 +41442,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateManyInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -42922,7 +42793,6 @@ export namespace Prisma {
     categoryId?: SortOrder
     picture?: SortOrder
     categoryName?: SortOrder
-    categoryCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -42933,7 +42803,6 @@ export namespace Prisma {
     categoryId?: SortOrder
     picture?: SortOrder
     categoryName?: SortOrder
-    categoryCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -42944,7 +42813,6 @@ export namespace Prisma {
     categoryId?: SortOrder
     picture?: SortOrder
     categoryName?: SortOrder
-    categoryCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43113,7 +42981,6 @@ export namespace Prisma {
   export type DepartmentCountOrderByAggregateInput = {
     departmentId?: SortOrder
     departmentName?: SortOrder
-    departmentCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43123,7 +42990,6 @@ export namespace Prisma {
   export type DepartmentMaxOrderByAggregateInput = {
     departmentId?: SortOrder
     departmentName?: SortOrder
-    departmentCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43133,7 +42999,6 @@ export namespace Prisma {
   export type DepartmentMinOrderByAggregateInput = {
     departmentId?: SortOrder
     departmentName?: SortOrder
-    departmentCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43199,7 +43064,6 @@ export namespace Prisma {
 
   export type EmployeeCountOrderByAggregateInput = {
     employeeId?: SortOrder
-    employeeCode?: SortOrder
     firstName?: SortOrder
     lastName?: SortOrder
     gender?: SortOrder
@@ -43220,7 +43084,6 @@ export namespace Prisma {
 
   export type EmployeeMaxOrderByAggregateInput = {
     employeeId?: SortOrder
-    employeeCode?: SortOrder
     firstName?: SortOrder
     lastName?: SortOrder
     gender?: SortOrder
@@ -43237,7 +43100,6 @@ export namespace Prisma {
 
   export type EmployeeMinOrderByAggregateInput = {
     employeeId?: SortOrder
-    employeeCode?: SortOrder
     firstName?: SortOrder
     lastName?: SortOrder
     gender?: SortOrder
@@ -43503,7 +43365,6 @@ export namespace Prisma {
     positionId?: SortOrder
     departmentId?: SortOrder
     positionName?: SortOrder
-    positionCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43514,7 +43375,6 @@ export namespace Prisma {
     positionId?: SortOrder
     departmentId?: SortOrder
     positionName?: SortOrder
-    positionCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43525,7 +43385,6 @@ export namespace Prisma {
     positionId?: SortOrder
     departmentId?: SortOrder
     positionName?: SortOrder
-    positionCode?: SortOrder
     memo?: SortOrder
     status?: SortOrder
     createdAt?: SortOrder
@@ -43560,7 +43419,6 @@ export namespace Prisma {
   export type ProductCountOrderByAggregateInput = {
     productId?: SortOrder
     productName?: SortOrder
-    productCode?: SortOrder
     categoryId?: SortOrder
     picture?: SortOrder
     price?: SortOrder
@@ -43578,7 +43436,6 @@ export namespace Prisma {
   export type ProductMaxOrderByAggregateInput = {
     productId?: SortOrder
     productName?: SortOrder
-    productCode?: SortOrder
     categoryId?: SortOrder
     picture?: SortOrder
     price?: SortOrder
@@ -43591,7 +43448,6 @@ export namespace Prisma {
   export type ProductMinOrderByAggregateInput = {
     productId?: SortOrder
     productName?: SortOrder
-    productCode?: SortOrder
     categoryId?: SortOrder
     picture?: SortOrder
     price?: SortOrder
@@ -46282,7 +46138,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutAddressInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46304,7 +46159,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutAddressInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46454,7 +46308,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutAddressInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -46476,7 +46329,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutAddressInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -46498,7 +46350,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutAttendancesInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46520,7 +46371,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutAttendancesInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46558,7 +46408,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutAttendancesInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -46580,7 +46429,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutAttendancesInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -46745,7 +46593,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutAuthInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46767,7 +46614,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutAuthInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -46950,7 +46796,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutAuthInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -46972,7 +46817,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutAuthInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -47067,7 +46911,6 @@ export namespace Prisma {
   export type ProductCreateWithoutCartInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -47082,7 +46925,6 @@ export namespace Prisma {
   export type ProductUncheckedCreateWithoutCartInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     categoryId: string
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
@@ -47168,7 +47010,6 @@ export namespace Prisma {
   export type ProductUpdateWithoutCartInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -47183,7 +47024,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateWithoutCartInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -47323,7 +47163,6 @@ export namespace Prisma {
   export type ProductCreateWithoutCategoryInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -47338,7 +47177,6 @@ export namespace Prisma {
   export type ProductUncheckedCreateWithoutCategoryInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -47382,7 +47220,6 @@ export namespace Prisma {
     NOT?: ProductScalarWhereInput | ProductScalarWhereInput[]
     productId?: UuidFilter<"Product"> | string
     productName?: StringFilter<"Product"> | string
-    productCode?: StringNullableFilter<"Product"> | string | null
     categoryId?: UuidFilter<"Product"> | string
     picture?: StringNullableFilter<"Product"> | string | null
     price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
@@ -47760,7 +47597,6 @@ export namespace Prisma {
   export type PositionCreateWithoutDepartmentInput = {
     positionId?: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -47771,7 +47607,6 @@ export namespace Prisma {
   export type PositionUncheckedCreateWithoutDepartmentInput = {
     positionId?: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -47791,7 +47626,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutDepartmentInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -47813,7 +47647,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutDepartmentInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -47866,7 +47699,6 @@ export namespace Prisma {
     positionId?: UuidFilter<"Position"> | string
     departmentId?: UuidFilter<"Position"> | string
     positionName?: StringNullableFilter<"Position"> | string | null
-    positionCode?: StringNullableFilter<"Position"> | string | null
     memo?: StringNullableFilter<"Position"> | string | null
     status?: EnumStatusFilter<"Position"> | $Enums.Status
     createdAt?: DateTimeFilter<"Position"> | Date | string
@@ -47894,7 +47726,6 @@ export namespace Prisma {
     OR?: EmployeeScalarWhereInput[]
     NOT?: EmployeeScalarWhereInput | EmployeeScalarWhereInput[]
     employeeId?: UuidFilter<"Employee"> | string
-    employeeCode?: StringNullableFilter<"Employee"> | string | null
     firstName?: StringFilter<"Employee"> | string
     lastName?: StringFilter<"Employee"> | string
     gender?: EnumGenderFilter<"Employee"> | $Enums.Gender
@@ -48110,7 +47941,6 @@ export namespace Prisma {
   export type PositionCreateWithoutEmployeesInput = {
     positionId?: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48122,7 +47952,6 @@ export namespace Prisma {
     positionId?: string
     departmentId: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48137,7 +47966,6 @@ export namespace Prisma {
   export type DepartmentCreateWithoutEmployeesInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48148,7 +47976,6 @@ export namespace Prisma {
   export type DepartmentUncheckedCreateWithoutEmployeesInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48338,7 +48165,6 @@ export namespace Prisma {
   export type PositionUpdateWithoutEmployeesInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48350,7 +48176,6 @@ export namespace Prisma {
     positionId?: StringFieldUpdateOperationsInput | string
     departmentId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48371,7 +48196,6 @@ export namespace Prisma {
   export type DepartmentUpdateWithoutEmployeesInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48382,7 +48206,6 @@ export namespace Prisma {
   export type DepartmentUncheckedUpdateWithoutEmployeesInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48392,7 +48215,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutInfoInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48414,7 +48236,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutInfoInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48452,7 +48273,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutInfoInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -48474,7 +48294,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutInfoInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -48675,7 +48494,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutPaymentInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48697,7 +48515,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutPaymentInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48772,7 +48589,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutPaymentInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -48794,7 +48610,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutPaymentInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -48817,7 +48632,6 @@ export namespace Prisma {
   export type DepartmentCreateWithoutPositionsInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48828,7 +48642,6 @@ export namespace Prisma {
   export type DepartmentUncheckedCreateWithoutPositionsInput = {
     departmentId?: string
     departmentName: string
-    departmentCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48843,7 +48656,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutPositionInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48865,7 +48677,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutPositionInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -48909,7 +48720,6 @@ export namespace Prisma {
   export type DepartmentUpdateWithoutPositionsInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48920,7 +48730,6 @@ export namespace Prisma {
   export type DepartmentUncheckedUpdateWithoutPositionsInput = {
     departmentId?: StringFieldUpdateOperationsInput | string
     departmentName?: StringFieldUpdateOperationsInput | string
-    departmentCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -48948,7 +48757,6 @@ export namespace Prisma {
     categoryId?: string
     picture?: string | null
     categoryName: string
-    categoryCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -48959,7 +48767,6 @@ export namespace Prisma {
     categoryId?: string
     picture?: string | null
     categoryName: string
-    categoryCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -49084,7 +48891,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -49095,7 +48901,6 @@ export namespace Prisma {
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     categoryName?: StringFieldUpdateOperationsInput | string
-    categoryCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -49184,7 +48989,6 @@ export namespace Prisma {
   export type ProductCreateWithoutStocksInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -49199,7 +49003,6 @@ export namespace Prisma {
   export type ProductUncheckedCreateWithoutStocksInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     categoryId: string
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
@@ -49259,7 +49062,6 @@ export namespace Prisma {
   export type ProductUpdateWithoutStocksInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -49274,7 +49076,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateWithoutStocksInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -49391,7 +49192,6 @@ export namespace Prisma {
 
   export type EmployeeCreateWithoutSalesInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -49413,7 +49213,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedCreateWithoutSalesInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -49554,7 +49353,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutSalesInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -49576,7 +49374,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutSalesInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -49699,7 +49496,6 @@ export namespace Prisma {
   export type ProductCreateWithoutSaledetailsInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -49714,7 +49510,6 @@ export namespace Prisma {
   export type ProductUncheckedCreateWithoutSaledetailsInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     categoryId: string
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
@@ -49782,7 +49577,6 @@ export namespace Prisma {
   export type ProductUpdateWithoutSaledetailsInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -49797,7 +49591,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateWithoutSaledetailsInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -50493,7 +50286,6 @@ export namespace Prisma {
   export type ProductCreateManyCategoryInput = {
     productId?: string
     productName: string
-    productCode?: string | null
     picture?: string | null
     price?: Decimal | DecimalJsLike | number | string
     discountRate?: number
@@ -50505,7 +50297,6 @@ export namespace Prisma {
   export type ProductUpdateWithoutCategoryInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -50520,7 +50311,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateWithoutCategoryInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -50535,7 +50325,6 @@ export namespace Prisma {
   export type ProductUncheckedUpdateManyWithoutCategoryInput = {
     productId?: StringFieldUpdateOperationsInput | string
     productName?: StringFieldUpdateOperationsInput | string
-    productCode?: NullableStringFieldUpdateOperationsInput | string | null
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     discountRate?: IntFieldUpdateOperationsInput | number
@@ -50711,7 +50500,6 @@ export namespace Prisma {
   export type PositionCreateManyDepartmentInput = {
     positionId?: string
     positionName?: string | null
-    positionCode?: string | null
     memo?: string | null
     status?: $Enums.Status
     createdAt?: Date | string
@@ -50720,7 +50508,6 @@ export namespace Prisma {
 
   export type EmployeeCreateManyDepartmentInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -50737,7 +50524,6 @@ export namespace Prisma {
   export type PositionUpdateWithoutDepartmentInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50748,7 +50534,6 @@ export namespace Prisma {
   export type PositionUncheckedUpdateWithoutDepartmentInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50759,7 +50544,6 @@ export namespace Prisma {
   export type PositionUncheckedUpdateManyWithoutDepartmentInput = {
     positionId?: StringFieldUpdateOperationsInput | string
     positionName?: NullableStringFieldUpdateOperationsInput | string | null
-    positionCode?: NullableStringFieldUpdateOperationsInput | string | null
     memo?: NullableStringFieldUpdateOperationsInput | string | null
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -50768,7 +50552,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutDepartmentInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -50790,7 +50573,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutDepartmentInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -50812,7 +50594,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateManyWithoutDepartmentInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -51026,7 +50807,6 @@ export namespace Prisma {
 
   export type EmployeeCreateManyPositionInput = {
     employeeId?: string
-    employeeCode?: string | null
     firstName: string
     lastName: string
     gender?: $Enums.Gender
@@ -51042,7 +50822,6 @@ export namespace Prisma {
 
   export type EmployeeUpdateWithoutPositionInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -51064,7 +50843,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateWithoutPositionInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender
@@ -51086,7 +50864,6 @@ export namespace Prisma {
 
   export type EmployeeUncheckedUpdateManyWithoutPositionInput = {
     employeeId?: StringFieldUpdateOperationsInput | string
-    employeeCode?: NullableStringFieldUpdateOperationsInput | string | null
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
     gender?: EnumGenderFieldUpdateOperationsInput | $Enums.Gender

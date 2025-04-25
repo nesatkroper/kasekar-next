@@ -15,7 +15,7 @@ async function DepartmentsTableContainer() {
     return <div className='text-red-500'>Error: {error}</div>;
   }
 
-  return <DepartmentTable departmentData={departments} />;
+  return <DepartmentTable departmentData={departments || []} />;
 }
 
 export default function DepartmentsPage() {

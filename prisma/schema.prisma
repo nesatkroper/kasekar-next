@@ -127,7 +127,6 @@ model Category {
   categoryId String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   picture String?
   categoryName String
-  categoryCode String?
   memo String?
   status Status @default(active)
   createdAt DateTime @default(now())
@@ -174,7 +173,6 @@ model Customerinfo{
 model Department {
   departmentId String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   departmentName String
-  departmentCode String?
   memo String?
   status Status @default(active)
   createdAt DateTime @default(now())
@@ -185,7 +183,6 @@ model Department {
 }
 model Employee {
   employeeId String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  employeeCode String? @unique
   firstName String
   lastName String
   gender Gender @default(male)
@@ -276,7 +273,6 @@ model Position {
   positionId String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   departmentId String @db.Uuid
   positionName String?
-  positionCode String?
   memo String?
   status Status @default(active)
   createdAt DateTime @default(now())
@@ -287,7 +283,6 @@ model Position {
 model Product {
   productId String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   productName String
-  productCode String?
   categoryId String @db.Uuid
   picture String?
   price Decimal @db.Decimal(10,2) @default(0.00)
